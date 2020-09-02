@@ -1,0 +1,23 @@
+{
+  "name": "restaurant-webpage",
+  "version": "1.0.0",
+  "description": "dynamically rendered restaraunt webpage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charleszha2000/restaurant-webpage.git"
+  },
+  "author": "Charles Zhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charleszha2000/restaurant-webpage/issues"
+  },
+  "homepage": "https://github.com/charleszha2000/restaurant-webpage#readme",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
