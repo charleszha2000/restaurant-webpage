@@ -1,4 +1,4 @@
-import initial from initial.js;
-import renderHomePage from home.js;
+import {initial} from "./initial.js";
+import {renderHomePage} from "./home.js";
 
 initial();

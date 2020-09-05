@@ -44,16 +44,11 @@ ul{
 
 
 .nav-button{
-    display: inline;
+    display: inline-block;
     margin-right: 20px;
     
 }
 
-.nav-button li:hover {
-    transform: scale(1.1);
-    transition: 0.2s;
-    cursor: pointer;
-}
 
 
 #main{
@@ -101,4 +96,22 @@ a {
     transform: translate(-50%, -50%);
     font-size: 5rem;
     width: 75%;
+}
+
+.nav-button:hover{
+    transform: scale(1.05);
+    text-decoration: underline;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+a:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.active{
+    text-decoration: underline;
+    transform: scale(1.1) !important;
+    color: orange;
 }

@@ -1,8 +1,9 @@
-import renderHomePage from 'home.js';
+import {renderHomePage} from './home.js';
 
 const navButtons = 
     [{id: 'home-button',
-        content: 'Home'},
+        content: 'Home',
+        render: renderHomePage,},
     {id: 'about-button',
         content: 'About'},
     {id: 'menu-button',
@@ -36,22 +37,29 @@ const initial = () =>{
     let navList = document.createElement('ul');
     navList.id = "nav-list";
     
-
-    for(navButton in navButtons){
+    let navButton;
+    for(navButton of navButtons){
         let listElement = document.createElement('li');
         listElement.classList.add("nav-button");
         listElement.id = navButton.id;
         listElement.textContent = navButton.content;
+        console.log(navButton.render);
         navList.appendChild(listElement);
+        const func = navButton.render;
+        listElement.addEventListener('click', () =>{
+            const buttons = document.querySelectorAll('.nav-button');
+            buttons.forEach(button => button.classList.remove('active'));
+            func();
+        })
     }
     navDiv.appendChild(navList);
-    headerDiv.appendChild(navList);
+    headerDiv.appendChild(navDiv);
 
     contentDiv.appendChild(headerDiv);
 
     //add main div and render the homepage
     let mainDiv = document.createElement('div');
-    div.id = 'main';
+    mainDiv.id = 'main';
     contentDiv.appendChild(mainDiv);
     renderHomePage();
 
@@ -62,16 +70,18 @@ const initial = () =>{
     let footerList = document.createElement('ul');
     footerList.id = "footer-list";
 
-    for(socialMedia in SocialMedias){
-        let listElement = document.create('li');
-        listElement.textContent = socialMedia.name;
+    let socialMedia;
+    for(socialMedia of socialMedias){
+        let listElement = document.createElement('li');
         let link = document.createElement('a');
         link.setAttribute("href", socialMedia.link);
+        link.textContent = socialMedia.name;
         listElement.appendChild(link);
         footerList.appendChild(listElement);
     }
 
     footerDiv.appendChild(footerList);
+    contentDiv.appendChild(footerDiv);
 }
 
 export {
