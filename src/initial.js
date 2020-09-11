@@ -1,15 +1,21 @@
 import {renderHomePage} from './home.js';
+import {renderAboutPage} from './about.js';
+import {renderMenuPage} from './menu.js';
+import {renderContactPage} from './contact.js'
 
 const navButtons = 
     [{id: 'home-button',
         content: 'Home',
         render: renderHomePage,},
     {id: 'about-button',
-        content: 'About'},
+        content: 'About',
+        render: renderAboutPage,},
     {id: 'menu-button',
-        content: 'Menu'},
+        content: 'Menu',
+        render: renderMenuPage,},
     {id: 'contact-button',
-        content: 'Contact Us'}];
+        content: 'Contact Us',
+        render: renderContactPage,}];
 const socialMedias = 
     [{link : "https://www.instagram.com/c.zhang_/",
         name: "Instagram"},
